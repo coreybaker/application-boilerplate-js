@@ -11,15 +11,42 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
 </head>
 <body class="claro">
    <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. --> 
 
-   
-   <div id="mapDiv" dir="ltr"></div>
+   <header class="app-header">
+       <h2>Application Header</h2>
+   </header>
+
+        <div class="row">
+       <div class="small-3 small-4 columns">
+           <h3>Content</h3>
+       </div>
+       <div class="small-3 small-4 columns">
+           <h3>Content</h3>
+       </div>
+       <div class="small-3 small-4 columns">
+           <h3>Content</h3>
+       </div>
+   </div>
+   <!-- This gets the map out of using the foundation styling and lets it span across the full screen -->
+    <div id="mapDiv"></div>
+
+    <div class="row">
+        <div class="small-12">
+            <h3>Submit Your Brewery</h3>
+        </div>
+    </div>
 
 
 
+
+   <!-- <div id="mapDiv" dir="ltr"></div> -->
+
+
+ 
 
 
 
