@@ -1,18 +1,29 @@
-html,body {
-	padding:0;
-	margin:0;
-	height:100%;
-	width:100%;
-	font-family:Arial,Helvetica,sans-serif;
+/****
+Created By: Corey Baker
+Use: Use as you want
+Start Date: February 10th 2014
+End Date:
+Company: Esri
+***/
+
+
+
+/** Header and Navigation in Header Styles **/
+
+.app-header {
+	background:dodgerblue;
 }
+
+/** Content Styles **/
+
+.small-3 > h3 {
+	text-align:center;
+}
+/** Map Styles **/
 
 #mapDiv {
-	padding:0;
-	margin:0;
 	width:100%;
-	height:100%;
 }
 
-.esriRTL label {
-/*Example of a rule that will be applied if the app is viewed in a browser wtih a RTL locale like Hebrew or Arabic.*/
-}
+/* Form Styles */
+
