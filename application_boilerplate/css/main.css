@@ -1,0 +1,29 @@
+/****
+Created By: Corey Baker
+Use: Use as you want
+Start Date: February 10th 2014
+End Date:
+Company: Esri
+***/
+
+
+
+/** Header and Navigation in Header Styles **/
+
+.app-header {
+	background:dodgerblue;
+}
+
+/** Content Styles **/
+
+.small-3 > h3 {
+	text-align:center;
+}
+/** Map Styles **/
+
+#mapDiv {
+	width:100%;
+}
+
+/* Form Styles */
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ArcGIS Application Boilerplate</title>
+    <meta charset="utf-8">
+    <!--Use protocol relative urls that way if the browser is viewing the page via HTTPS the js/css file will be requested using the HTTPS protocol-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.8/js/esri/css/esri.css">
+    <!--Load any application specific styles-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+</head>
+<body class="claro">
+   <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. --> 
+
+   <header class="app-header">
+       <h2>Application Header</h2>
+   </header>
+
+        <div class="row">
+       <div class="small-3 small-4 columns">
+           <h3>Content</h3>
+       </div>
+       <div class="small-3 small-4 columns">
+           <h3>Content</h3>
+       </div>
+       <div class="small-3 small-4 columns">
+           <h3>Content</h3>
+       </div>
+   </div>
+   <!-- This gets the map out of using the foundation styling and lets it span across the full screen -->
+    <div id="mapDiv"></div>
+
+
+    <div class="row">
+        <div class="small-12 submit">
+            <h3>Submit Your Brewery</h3>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+    <div class="small-12 columns">
+
+  <form>
+        <div class="row">
+            <div class="small-12 columns">
+                <label>Brewery Name
+                    <input type="text" placeholder="Best Brewery Ever" />
+                </label>
+            </div>
+        </div>
+
+         <div class="row">
+            <div class="small-4 columns">
+                 <label>Address
+                    <input type="text" placeholder="1060 W. Addison St."/>
+                </label>
+        </div>
+
+         <div class="row">
+            <div class="small-3 columns">
+                 <label>City
+                    <input type="text" placeholder="Chicago"/>
+                </label>
+        </div>
+
+         <div class="row">
+            <div class="small-2 columns">
+                 <label>State
+                     <select>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL" selected>Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                            </select>
+                </label>
+        </div>
+
+        <div class="row">
+            <div class="small-2 columns">
+                 <label>Zip Code
+                    <input type="text" placeholder="60613"/>
+                </label>
+        </div>
+
+        <div class="row">
+            <div class="small-6 columns">
+                <label>Website URL
+                    <input type="text" placeholder="http://www.bestbreweryever.com"/>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-2 columns">
+                <label>Phone
+                    <input type="tel" placeholder="555-555-5555"/>
+                </label>
+            </div>
+        </div>
+
+
+
+    
+  </form>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+   <!-- <div id="mapDiv" dir="ltr"></div> -->
+
+
+ 
+
+
+
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var dojoConfig = {
+            // The locationPath logic below may look confusing but all its doing is 
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+            packages: [{
+                name: "application",
+                location: package_path + '/js'
+            }, {
+                name: "config",
+                location: package_path + '/config'
+            }]
+        };
+    </script>
+    <script type="text/javascript" src="//js.arcgis.com/3.8/"></script>
+    <script type="text/javascript">
+        require([
+            "dojo/on",
+            "application/main",
+            "application/template",
+            "dojo/domReady!"
+        ], function(
+            on,
+            Main,
+            Template
+        ){
+            //create the template. This will take care of all the logic required for template applications 
+            //If you need localization set the supportsLocalization value to true to get the localized strings 
+            //from the javascript/nls/resource files. 
+            //Note that we've included a placeholder nls folder and a resource file with one error string
+            //to show how to setup the strings file.
+            
+            var supportsLocalization = true; //defaults to true
+            
+            var myTemplate = new Template(supportsLocalization);
+            
+            on(myTemplate, "ready", function(config) {
+                //The config object contains the following properties: helper services, (optionally) 
+                //i18n, appid, webmap and any custom values defined by the application. 
+                //In this example we have one called theme. 
+                Main(config);
+            });
+        });
+    </script>   
+       <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
