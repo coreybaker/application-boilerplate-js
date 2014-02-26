@@ -56,6 +56,7 @@ ready, declare, lang, arcgisUtils, IdentityManager, Extent, on) {
                         var layerInfo = [];
 
                         console.log("This is where to LOOK!!!");
+                        //This console log will return the layer object (sweet!)
                         console.log(layers);
 
                         dojo.forEach(layers, function(layer){
