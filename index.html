@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
 </head>
 <body class="claro">
    <!--The ArcGIS API for JavaScript provides bidirectional support.  When viewing the application in an right to left (rtl) language like Hebrew and Arabic the map needs to remain in left-to-right (ltr) mode. Specify this by setting the dir attribute on the div to ltr. --> 
@@ -20,22 +19,24 @@
        <h2>Application Header</h2>
    </header>
 
-        <div class="row">
-       <div class="small-3 small-4 columns">
-           <h3>Content</h3>
-       </div>
-       <div class="small-3 small-4 columns">
-           <h3>Content</h3>
-       </div>
-       <div class="small-3 small-4 columns">
-           <h3>Content</h3>
+   <!-- Application Search Buttons -->
+
+   <div class="row">
+       <div class="small-4 small-centered column">
+            <input type="text" placeholder="Search by Name"/>
+            <a href="#" class="button map_query">Search</a>
        </div>
    </div>
+
+
+   
    <!-- This gets the map out of using the foundation styling and lets it span across the full screen -->
-    <div id="mapDiv"></div>
+   <div id="mapDiv"></div> 
+   
 
 
-    <div class="row">
+
+    <div class="row submit_wrapper">
         <div class="small-12 submit">
             <h3>Submit Your Brewery</h3>
         </div>
@@ -43,35 +44,34 @@
 
 
 
-    <div class="row">
+<!-- Start Form Layout -->
 
-    <div class="small-12 columns">
 
-  <form>
-        <div class="row">
+<div class="row"> <!-- Start Form Row -->
+    <div class="small-12 columns"> <!-- Start Form-Column Wrapper -->
+        <form>
+            <div class="row"> <!-- BreweryName/Address Enter Row Start -->
             <div class="small-12 columns">
                 <label>Brewery Name
                     <input type="text" placeholder="Best Brewery Ever" />
                 </label>
-            </div>
-        </div>
+            </div> <!-- Breery Name Columns -->
+            </div> <!-- Brewery Name Row -->
 
-         <div class="row">
-            <div class="small-4 columns">
-                 <label>Address
+            <div class="row">
+                <div class="small-3 columns">
+                <label>Address
                     <input type="text" placeholder="1060 W. Addison St."/>
                 </label>
-        </div>
+                </div> <!-- Numeric/Name Address Column -->
 
-         <div class="row">
-            <div class="small-3 columns">
-                 <label>City
+                <div class="small-3 columns">
+                <label>City
                     <input type="text" placeholder="Chicago"/>
                 </label>
-        </div>
+                </div> <!-- City Column-->
 
-         <div class="row">
-            <div class="small-2 columns">
+                <div class="small-3 columns">
                  <label>State
                      <select>
                             <option value="AL">Alabama</option>
@@ -127,54 +127,63 @@
                             <option value="WY">Wyoming</option>
                             </select>
                 </label>
-        </div>
+                </div> <!-- State Selection Column -->
 
-        <div class="row">
-            <div class="small-2 columns">
-                 <label>Zip Code
-                    <input type="text" placeholder="60613"/>
-                </label>
-        </div>
+                <div class="small-3 columns">
+                    <label>Zip Code
+                        <input type="text" placeholder="60613"/>
+                    </label>
+                </div> <!-- Zipcode Column -->
 
-        <div class="row">
-            <div class="small-6 columns">
-                <label>Website URL
-                    <input type="text" placeholder="http://www.bestbreweryever.com"/>
-                </label>
-            </div>
-        </div>
+                
+            </div> <!-- Address Enter Row End -->
 
-        <div class="row">
-            <div class="small-2 columns">
-                <label>Phone
-                    <input type="tel" placeholder="555-555-5555"/>
-                </label>
-            </div>
-        </div>
+            <div class="row">
+            <div class="small-8 columns">
+                    <label>Website URL
+                        <input type="text" placeholder="http://www.bestbreweryever.com"/>
+                    </label>
+            </div> <!-- Brewery Website URL Column -->
+
+            <div class="small-4 columns">
+                    <label>Phone
+                        <input type="tel" placeholder="555-555-5555"/>
+                    </label>
+            </div> <!-- Brewery Phone # Column -->
+                    
+            </div> <!-- Brewery Contact Row -->
+
+            <div class="row">
+                <div class="small-3 columns">
+                    <label>First Name
+                        <input type="text" placeholder="John"/>
+                    </label>
+                </div> <!-- Owner First Name Column -->
+                <div class="small-3 columns">
+                    <label>Last Name
+                        <input type="text" placeholder="Smith"/>
+                    </label>
+                </div> <!-- Owner Last Name Column -->
+                <div class="small-3 columns">
+                    <label>Email 
+                        <input type="text" placeholder="jsmith@bestbreweryever.com"/>
+                    </label>
+                </div> <!-- Owner Email Column -->
+                <div class="small-3 columns">
+                    <label>Phone
+                        <input type="tel" placeholder="555-555-5555"/>
+                    </label>
+                </div> <!-- Owner Phone Number Column -->
+            </div> <!-- Owner Contact Row -->
 
 
-
-    
-  </form>
-
-
-</div>
-
-</div>
+        
+        </form>
+    </div> <!-- End Form-Column Wrapper -->
 
 
-
-
-
-
-
-
-
-   <!-- <div id="mapDiv" dir="ltr"></div> -->
-
-
- 
-
+</div> <!-- End Form Row -->    
+<!-- End Form Layout -->
 
 
     <script type="text/javascript">
@@ -223,6 +232,7 @@
     </script>   
        <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/query.js"></script>
     <script>
       $(document).foundation();
     </script>
