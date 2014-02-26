@@ -42,11 +42,30 @@ ready, declare, lang, arcgisUtils, IdentityManager, Extent, on) {
                 //such as the map, operational layers, popup info and more. This object will also contain
                 //any custom options you defined for the template. In this example that is the 'theme' property.
                 //Here' we'll use it to update the application to match the specified color theme.  
+
+
+
                 console.log(this.config);
                 this.map = response.map;
 
                 if (this.map.loaded) {
                     // do something with the map
+
+                        console.log("map is loaded");
+                        var layers = response.itemInfo.itemData.operationalLayers;
+                        var layerInfo = [];
+
+                        console.log("This is where to LOOK!!!");
+                        console.log(layers);
+
+                        dojo.forEach(layers, function(layer){
+                            if(!layer.featureCollection){
+                                layerInfo.push({"layer":layer.layerObject, "title":layer.title});
+                            }
+                        });
+
+
+
                     this._mapLoaded();
                 } else {
                     on.once(this.map, "load", lang.hitch(this, function () {
